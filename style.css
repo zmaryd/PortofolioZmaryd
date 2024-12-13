@@ -390,78 +390,215 @@ header nav ul li a:hover:before {
 .rotating-shape-right:after {
   transform: rotate(60deg);
 }
+.rotating-shape-left1 {
+  width: 50px; /* Ukuran elemen duplikat */
+  height: 50px;
+  background: #000000; /* Warna latar */
+  position: absolute;
+  top: 210%;
+  left: -63%; /* Ditempatkan di sisi kiri */
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: rotate-shape 30s linear infinite;
+}
+
+.rotating-shape-left1:before,
+.rotating-shape-left1:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px; /* Ukuran elemen pseudo */
+  height: 50px;
+  background: #000000;
+}
+
+.rotating-shape-left1:before {
+  transform: rotate(30deg);
+}
+
+.rotating-shape-left1:after {
+  transform: rotate(60deg);
+}
+
+.shape-rotation-right1 {
+  width: 50px; /* Ukuran elemen duplikat */
+  height: 50px;
+  background: #000000; /* Warna latar */
+  position: absolute;
+  top: 128%;
+  right: -20%; /* Ditempatkan di sisi kanan */
+  transform: translate(50%, -50%) rotate(0deg);
+  animation: rotate-shape 30s linear infinite;
+}
+
+.shape-rotation-right1:before,
+.shape-rotation-right1:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px; /* Ukuran elemen pseudo */
+  height: 50px;
+  background: #000000;
+}
+
+.shape-rotation-right1:before {
+  transform: rotate(30deg);
+}
+
+.shape-rotation-right1:after {
+  transform: rotate(60deg);
+}
+
+
 
 /* Mencegah scroll horizontal */
 body {
   overflow-x: hidden;
 }
 
-
 /* SectionServices dan Skill */
 /* Membuat container card menjadi flexbox dan memusatkan card */
 
-.judul{
+.judul {
+  text-align: center;
+  margin-top: 5px; /* Tambahkan jarak atas */
+  margin-bottom: -2px;
+
+}
+
+/* Namespace khusus untuk Skill section */
+.Skill {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  margin-top: -2px;
+}
+
+.Skill .judul {
   text-align: center;
   margin-bottom: 40px;
 }
-.Skill {
-  width: 45%;
-  display: flex;
-  align-items: center ;
-  justify-content: center;
-  flex-direction: column;
-  gap: 10px ;
-}
 
-.Skill h1 {
-  text-align: center; /* Menyelaraskan teks di tengah */
-  margin-bottom: 20px; /* Memberikan jarak antara judul dan card */
-}
-
-.card {
+.Skill .card {
   background-color: white;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  width: 100%;
+  max-width: 700px;
   padding: 20px;
   text-align: left;
-  outline: 3px solid black; /* Menambahkan outline border hitam */
+  border: 2px solid black; /* Menambahkan outline hitam */
+  margin: 20px;
 }
 
+.Skill .profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
 
-.icon {
-  background-color: #FFD700;
-  border-radius: 50%;
+.Skill .profile img {
   width: 60px;
   height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto 20px;
-  font-weight: bold;
-  font-size: 24px;
-  color: white;
+  border-radius: 50%;
+  border: 2px solid black;
+  object-fit: cover; /* Memastikan gambar sesuai tanpa distorsi */
 }
 
-.title {
+
+.Skill .profile h2 {
   font-size: 1.5em;
   font-weight: bold;
-  margin: 10px 0;
+  margin: 0;
+  object-fit: cover;
 }
 
-.description {
+.Skill .profile p {
   font-size: 0.9em;
   color: #555;
-  margin: 10px 0 20px;
+  margin: 5px 0 0;
+  object-fit: cover;
 }
 
-.learn-more {
+.Skill .skills {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.Skill .skill {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.Skill .skill img {
+  width: 40px;
+  height: 40px;
+  border: 2px solid black;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.Skill .skill-name {
+  flex: 1;
   font-size: 0.9em;
-  color: #FF4500;
+  font-weight: bold;
+}
+
+.Skill .progress-bar {
+  flex: 2;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.Skill .progress {
+  height: 100%;
+  background-color: #0f4724;
+  border-radius: 5px 0 0 5px;
+}
+
+.Skill .learn-more {
+  display: block;
+  margin-top: 20px;
+  text-align: right;
+  color: #0f4724;
   text-decoration: none;
   font-weight: bold;
 }
 
-.learn-more:hover {
-  text-decoration: underline; /* Add underline effect on hover */
+.Skill .learn-more:hover {
+  text-decoration: underline;
+}
+
+.Skill button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.Skill button:hover {
+  background-color: #333;
+}
+
+.Skill .prev-btn {
+  left: 10px;
+}
+
+.Skill .next-btn {
+  right: 10px;
 }
